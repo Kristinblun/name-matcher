@@ -1,42 +1,74 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+::before,
+::after {
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+html,
+body {
+  margin: 0;
+  background: linear-gradient(to right, pink, #ffffe0, #00aaff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.current-name {
+  font-size: 5rem;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.current-name:focus {
+  background-color: transparent;
+  background: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.decision-button {
+  /* placeholder */
 }
 
-.card {
-  padding: 2em;
+.icon-green {
+  color: green;
+  font-size: 3rem;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+.icon-red {
+  color: red;
+  font-size: 3rem;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+.icon-red:hover {
+  background-color: rgba(255, 000, 000, 0.1);
+}
+.icon-green:hover {
+  background-color: rgba(000, 255, 000, 0.1);
+}
+.name-picker-wrapper {
+  display: flex;
+  width: 100%;
+  width: 500px;
+  align-items: center;
+  background-color: #f5f5f5;
+  color: #333333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  padding: 50px;
 }
 
-.read-the-docs {
-  color: #888;
+.decision-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.user-select-none {
+  /* prevents highlight of name text from rapid clicks */
+  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
 }
