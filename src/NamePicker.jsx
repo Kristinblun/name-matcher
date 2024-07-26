@@ -1,48 +1,67 @@
 import { useState } from "react";
+import Result from "./Result";
 
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 
-export default function NamePicker({ name, setName, babyNames }) {
-  const [favoriteNames, setFavoriteNames] = useState([]);
-
+export default function NamePicker({
+  name,
+  setName,
+  babyNames,
+  favoriteNames,
+  setFavoriteNames,
+}) {
   function handleThumbsUp() {
     setFavoriteNames((prevFavorites) => [...prevFavorites, name]);
-    const position = babyNames.indexOf(name);
-    const nextPosition = getNextIndex(babyNames, position);
+    const nextPosition = getNextIndex(babyNames, name);
     console.log(`Liked ${name}`);
-    setName(babyNames[nextPosition]);
+    if (nextPosition < babyNames.length) {
+      setName(babyNames[nextPosition]);
+    } else {
+      setName(null); //end of list reached
+    }
   }
 
   function handleThumbsDown() {
-    const position = babyNames.indexOf(name);
-    const nextPosition = getNextIndex(babyNames, position);
-    setName(babyNames[nextPosition]);
+    const nextPosition = getNextIndex(babyNames, name);
+    if (nextPosition < babyNames.length) {
+      setName(babyNames[nextPosition]);
+    } else {
+      setName(null); // end of list reached
+    }
   }
 
-  function getNextIndex(list, currentIndex) {
-    return (currentIndex + 1) % list.length;
+  function getNextIndex(list, name) {
+    const position = list.indexOf(name);
+    return position + 1;
   }
 
   console.log(favoriteNames);
 
-  return (
-    <>
-      <div className="name-picker-wrapper">
-        <div className="current-name user-select-none">{name}</div>
-        <div className="decision-wrapper">
-          <div className="decision-button">
-            {" "}
-            <FaThumbsUp className="icon-green" onClick={handleThumbsUp} />{" "}
-          </div>
-          <div className="decision-button">
-            {" "}
-            <FaThumbsDown
-              className="icon-red"
-              onClick={handleThumbsDown}
-            />{" "}
+  if (name === null) {
+    return <Result favoriteNames={favoriteNames} />;
+  } else {
+    return (
+      <>
+        <div className="name-picker-wrapper">
+          <div className="current-name user-select-none">{name}</div>
+          <div className="decision-wrapper">
+            <div className="decision-button">
+              {" "}
+              <FaThumbsUp
+                className="icon-green"
+                onClick={handleThumbsUp}
+              />{" "}
+            </div>
+            <div className="decision-button">
+              {" "}
+              <FaThumbsDown
+                className="icon-red"
+                onClick={handleThumbsDown}
+              />{" "}
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
