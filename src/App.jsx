@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      {/* <NewSession /> */}
+      <NewSession />
       <NamePicker
         name={name}
         setName={setName}

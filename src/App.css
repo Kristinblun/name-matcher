@@ -72,3 +72,61 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
+
+/* New Session CSS */
+
+.new-session-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.category-wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: #f5f5f5;
+  color: #333333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  padding: 50px;
+  justify-content: space-evenly;
+}
+
+.baby,
+.pet {
+  font-size: 6rem;
+}
+
+.baby-box-wrapper:hover,
+.pet-box-wrapper:hover {
+  transform: scale(1.1, 1.1) translateY(-5px);
+  cursor: pointer;
+}
+.pet {
+  color: rgba(164, 93, 31, 0.887);
+  display: flex;
+}
+
+.baby {
+  color: rgb(238, 167, 95);
+  display: flex;
+}
+.pet-box-wrapper,
+.baby-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.pet-box-wrapper {
+  background: linear-gradient(145deg, #e6ccb2, #d1a377);
+}
+
+.baby-box-wrapper {
+  background: linear-gradient(145deg, #fff0e5, #ffe0cc);
+}
