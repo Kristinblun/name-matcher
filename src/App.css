@@ -125,8 +125,70 @@ body {
 
 .pet-box-wrapper {
   background: linear-gradient(145deg, #e6ccb2, #d1a377);
+  color: rgba(164, 93, 31, 0.887);
+  letter-spacing: 0.05em;
 }
 
 .baby-box-wrapper {
   background: linear-gradient(145deg, #fff0e5, #ffe0cc);
+  color: rgb(238, 167, 95);
+  letter-spacing: 0.05em;
+}
+
+/* BabyComponent CSS */
+
+.baby-component-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-around;
+  background-color: #f5f5f5;
+  color: #333333;
+  width: 500px;
+  height: 300px;
+}
+.gender-selection-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.gender-selector {
+  padding: 20px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  cursor: pointer;
+}
+.gender-selector:hover {
+  transform: scale(1.1, 1.1) translateY(-5px);
+}
+
+.girl {
+  background: linear-gradient(135deg, #ffe0e9, #f48fb1);
+}
+
+.gender-neutral {
+  background: linear-gradient(135deg, #fff9e0, #f9a825);
+}
+
+.boy {
+  background: linear-gradient(135deg, #e3f2fd, #0288d1);
+}
+
+.go-back-arrow {
+  font-size: 2rem;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #e0e0e0, #9e9e9e);
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }

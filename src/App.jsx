@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import NamePicker from "./NamePicker";
 import NewSession from "./NewSession";
+import BabySelection from "./BabyComponents";
 
 function App() {
   const babyNames = [
@@ -26,14 +27,15 @@ function App() {
 
   return (
     <>
-      <NewSession />
+      <BabySelection />
+      {/* <NewSession />
       <NamePicker
         name={name}
         setName={setName}
         babyNames={babyNames}
         favoriteNames={favoriteNames}
         setFavoriteNames={setFavoriteNames}
-      />
+      /> */}
     </>
   );
 }
